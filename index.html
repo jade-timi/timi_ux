@@ -234,7 +234,7 @@ transform:translateY(0);
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Hey, I'm Timi 👋</h1>
+            <h1 id="typing"></h1>
             <p>
                 A young UI/UX designer and future computer scientist passionate about
                 building clean digital experiences.
@@ -410,6 +410,28 @@ learning simple, practical and accessible.
         </p>
     </div>
 </footer>
+ <script>
+const text = "Hey, I'm Timi 👋";
+const target = document.getElementById("typing");
 
+let index = 0;
+
+function typeText() {
+
+    if(index < text.length){
+
+        target.textContent += text.charAt(index);
+
+        index++;
+
+        setTimeout(typeText, 90);
+
+    }
+
+}
+
+window.onload = typeText;
+</script>
+ 
 </body>
 </html>
