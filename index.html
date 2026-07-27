@@ -185,6 +185,18 @@ animation:heroFade .8s ease forwards;
 .footer-small{
     color:#888;
     font-size:0.9rem;
+ /* Scroll Reveal */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+
 }
 @keyframes heroFade{
 
@@ -252,8 +264,8 @@ transform:translateY(0);
         <img src="my-photo.png" alt="Timi Photo">
     </section>
 
-    <section class="projects">
-        <section class="currently-building">
+    <section class="projects reveal">
+        <section class="currently-building reveal">
 
 <h2>🚧 Currently Building</h2>
 
@@ -280,7 +292,7 @@ learning simple, practical and accessible.
 
 </ul>
 
-</section>
+<section class="projects reveal">
         <h2>My Featured Project — Gelato App 🍦</h2>
 
         <div class="project-grid">
@@ -305,7 +317,7 @@ learning simple, practical and accessible.
             </div>
         </div>
     </section>
-<section class="projects">
+<section class="projects reveal">
     <h2>My Featured Project — Ruff Ruff App 🐶</h2>
 
     <div class="project-grid">
@@ -331,7 +343,7 @@ learning simple, practical and accessible.
     </div>
 </section>
 </div>
-<section class="projects">
+<section class="projects reveal">
     <h2>My Featured Project — MFA Academy 🌐</h2>
 
     <div class="project-grid">
@@ -352,7 +364,7 @@ learning simple, practical and accessible.
         </div>
 
     </div>
-<section class="projects">
+<section class="projects reveal">
     <h2>🧠 Currently Learning</h2>
 
     <div class="project-grid">
@@ -378,7 +390,7 @@ learning simple, practical and accessible.
     </div>
 </section>
 
-<section class="projects">
+<section class="projects reveal">
     <h2>✨ What Keeps Me Going</h2>
 
     <div class="project-card">
@@ -431,6 +443,31 @@ function typeText() {
 }
 
 window.onload = typeText;
+  const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    reveals.forEach((item)=>{
+
+        const windowHeight = window.innerHeight;
+
+        const revealTop = item.getBoundingClientRect().top;
+
+        const revealPoint = 120;
+
+        if(revealTop < windowHeight - revealPoint){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
 </script>
  
 </body>
