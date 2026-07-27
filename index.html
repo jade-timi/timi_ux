@@ -215,7 +215,61 @@ transform:translateY(0);
 
 }
 } 
+/* About Timi */
 
+.about-timi{
+    margin:100px 0;
+}
+
+.about-card{
+    max-width:780px;
+    margin:auto;
+    padding:45px;
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+}
+
+.avatar{
+    width:270px;
+    max-width:100%;
+    display:block;
+    margin:0 auto 30px;
+
+    animation:floatAvatar 4s ease-in-out infinite;
+}
+
+.about-card h2{
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.about-card p{
+    color:#cfcfcf;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+@keyframes floatAvatar{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
 /* 📱 mobile responsiveness */
  .about-timi{
     display:flex;
@@ -297,6 +351,13 @@ transform:translateY(0);
 
 .avatar-card img{
     width:220px;
+}
+     .about-card{
+    padding:30px 22px;
+}
+
+.avatar{
+    width:210px;
 }
     }
 }
@@ -503,11 +564,35 @@ learning simple, practical and accessible.
     </div>
 
 </section>
+ <section class="about-timi reveal">
+
+    <div class="about-card">
+
+        <img src="avatar.png" alt="Timi Avatar" class="avatar">
+
+        <h2>👋 About Timi</h2>
+
+        <p>
+            Hey! I'm Timi, a young UI/UX designer from Nigeria who enjoys turning ideas into clean digital experiences.
+        </p>
+
+        <p>
+            Outside of design, you'll usually find me watching football ⚽, listening to music 🎧, learning new tech skills, exploring AI tools, or sketching ideas for my next project.
+        </p>
+
+        <p>
+            I started designing because I was curious. Today, my goal is much bigger—to build products that genuinely help people and inspire other young creatives to believe they can do it too.
+        </p>
+
+        <p>
+            Every project on this website represents another step in that journey. 🚀
+        </p>
+
+    </div>
+
+</section>
 <footer class="footer">
-    <div class="footer-grid">
-        <div class="footer-logo">
-            <img src="footer-logo.png" alt="logo" />
-        </div>
+    
 
         <h2>Let’s build something great together</h2>
 
