@@ -186,6 +186,47 @@ animation:heroFade .8s ease forwards;
     color:#888;
     font-size:0.9rem;
 }
+ .project-timer{
+    margin-top:30px;
+    padding:20px;
+    border-radius:14px;
+    background:#111;
+    border:1px solid #2b2b2b;
+}
+
+.timer-label{
+    color:#a855f7;
+    font-size:.8rem;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.timer-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:12px 0;
+    color:#aaa;
+}
+
+.timer-info strong{
+    color:white;
+}
+
+.countdown{
+    margin-top:20px;
+    padding-top:18px;
+    border-top:1px solid #2b2b2b;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.4rem;
+}
+
+.countdown strong{
+    color:#a855f7;
+}
  /* Scroll Reveal */
 
 .reveal{
@@ -415,6 +456,27 @@ learning simple, practical and accessible.
 
 </ul>
          
+<div class="project-timer">
+
+    <p class="timer-label">PROJECT TIMELINE</p>
+
+    <div class="timer-info">
+        <span>Started</span>
+        <strong id="started-time">2 days ago</strong>
+    </div>
+
+    <div class="timer-info">
+        <span>Estimated completion</span>
+        <strong id="finish-time">In 2 days</strong>
+    </div>
+
+    <div class="countdown">
+        <span>⏳</span>
+        <strong id="countdown">48:00:00</strong>
+    </div>
+
+</div>
+         
 </section>         
 
 <section class="projects reveal">
@@ -623,6 +685,47 @@ function revealOnScroll(){
 window.addEventListener("scroll", revealOnScroll);
 
 revealOnScroll();
+  const twoDays = 2 * 24 * 60 * 60 * 1000;
+
+const pageOpenedAt = new Date();
+const finishTime = new Date(pageOpenedAt.getTime() + twoDays);
+
+function updateProjectTimer(){
+
+    const now = new Date();
+
+    const timeLeft = finishTime - now;
+
+    if(timeLeft <= 0){
+
+        document.getElementById("countdown").textContent =
+        "00:00:00";
+
+        return;
+
+    }
+
+    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+
+    const minutes = Math.floor(
+        (timeLeft % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (timeLeft % (1000 * 60)) / 1000
+    );
+
+    document.getElementById("countdown").textContent =
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+
+}
+
+updateProjectTimer();
+
+setInterval(updateProjectTimer, 1000);
 </script>
  
 </body>
