@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Timi | Projects</title>
+
+<style>
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0d0d0d;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:50px 0 80px;
+}
+
+/* TOP NAVIGATION */
+
+.top-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:70px;
+}
+
+.back-home{
+    color:#a855f7;
+    text-decoration:none;
+    font-size:1rem;
+}
+
+.back-home:hover{
+    color:white;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-title h1{
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.page-title p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+/* PROJECT TABS */
+
+.project-tabs{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:50px;
+    flex-wrap:wrap;
+}
+
+.tab-btn{
+    padding:13px 24px;
+    border-radius:12px;
+    border:1px solid #333;
+    background:#1a1a1a;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s ease;
+}
+
+.tab-btn:hover{
+    transform:translateY(-3px);
+    border-color:#a855f7;
+}
+
+.tab-btn.active{
+    background:#a855f7;
+    border-color:#a855f7;
+}
+
+/* PROJECT SECTIONS */
+
+.project-section{
+    display:none;
+}
+
+.project-section.active{
+    display:block;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:16px;
+    transition:transform .3s ease,
+               box-shadow .3s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.project-card img{
+    width:100%;
+    border-radius:12px;
+    display:block;
+}
+
+.project-card p{
+    color:#cfcfcf;
+    line-height:1.6;
+}
+
+/* MOTION COMING SOON */
+
+.motion-coming{
+    max-width:650px;
+    margin:40px auto;
+    text-align:center;
+    padding:60px 30px;
+    border-radius:24px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.motion-coming .icon{
+    font-size:3rem;
+}
+
+.motion-coming h2{
+    margin-top:20px;
+}
+
+.motion-coming p{
+    color:#aaa;
+    line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .top-nav{
+        margin-bottom:45px;
+    }
+
+    .page-title h1{
+        font-size:2.3rem;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="top-nav">
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </div>
+
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="page-title">
+
+        <h1>Selected Work.</h1>
+
+        <p>
+            A collection of interfaces, digital experiences
+            and motion projects I've been building.
+        </p>
+
+    </section>
+
+
+
+    <!-- TABS -->
+
+    <div class="project-tabs">
+
+        <button class="tab-btn active" onclick="showProjects('uiux')">
+            🎨 UI/UX Projects
+        </button>
+
+        <button class="tab-btn" onclick="showProjects('motion')">
+            🎬 Motion Projects
+        </button>
+
+    </div>
+
+
+
+    <!-- UI UX PROJECTS -->
+
+    <section id="uiux" class="project-section active">
+
+        <div class="project-grid">
+
+
+            <div class="project-card">
+
+                <img src="gelato-welcome.png" alt="Gelato App">
+
+                <h3>Gelato App 🍦</h3>
+
+                <p>
+                    A fun mobile experience for discovering
+                    and ordering delicious gelato.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img src="ruff-welcome.png" alt="Ruff Ruff App">
+
+                <h3>Ruff Ruff 🐶</h3>
+
+                <p>
+                    A clean mobile experience focused on
+                    discovering and adopting dogs.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img src="mfa-landing.png" alt="MFA Academy">
+
+                <h3>MFA Academy 🌐</h3>
+
+                <p>
+                    A modern forex education platform designed
+                    to make learning more accessible.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MOTION PROJECTS -->
+
+    <section id="motion" class="project-section">
+
+        <div class="motion-coming">
+
+            <div class="icon">🎬</div>
+
+            <h2>Motion is loading...</h2>
+
+            <p>
+                Currently learning Product Motion Design
+                and preparing my first animated project.
+                Something is cooking. 👀🔥
+            </p>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<script>
+
+function showProjects(category){
+
+    const sections =
+    document.querySelectorAll(".project-section");
+
+    const buttons =
+    document.querySelectorAll(".tab-btn");
+
+
+    sections.forEach((section)=>{
+
+        section.classList.remove("active");
+
+    });
+
+
+    buttons.forEach((button)=>{
+
+        button.classList.remove("active");
+
+    });
+
+
+    document
+    .getElementById(category)
+    .classList.add("active");
+
+
+    event.target.classList.add("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
