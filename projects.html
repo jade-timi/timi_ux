@@ -142,24 +142,45 @@ body{
 
 /* MOTION COMING SOON */
 
-.motion-coming{
-    max-width:650px;
-    margin:40px auto;
-    text-align:center;
-    padding:60px 30px;
-    border-radius:24px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(255,255,255,.08);
+.motion-projects {
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.motion-coming .icon{
-    font-size:3rem;
+.motion-card {
+    background: #1a1a1a;
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid #2b2b2b;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
-.motion-coming h2{
-    margin-top:20px;
+.motion-card:hover {
+    transform: translateY(-6px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 35px rgba(0,0,0,.35),
+                0 10px 30px rgba(168,85,247,.2);
+}
+
+.motion-card video {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    background: #111;
+}
+
+.motion-card h3 {
+    margin: 18px 0 8px;
+    font-size: 1.25rem;
+}
+
+.motion-card p {
+    color: #cfcfcf;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .motion-coming p{
@@ -310,7 +331,7 @@ body{
     </div>
 
     <div class="project-card">
-        <video controls preload="metadata" style="width: 100%; border-radius: 12px;">
+        <video controls playsinline preload="metadata"> style="width: 100%; border-radius: 12px;">
             <source src="witty-worder-promo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
